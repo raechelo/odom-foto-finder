@@ -1,8 +1,177 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* PAGE SECTIONS */
+
+nav {
+  background-color: #3E2A35;
+  display: grid;
+  grid-template-areas: "logo . input";
+  grid-template-columns: repeat(3, 1fr);
+  height: 80px;
+}
+
+main {
+  background-color: #3E2A35;
+  height: 400px;
+  width: 100%;
+}
+
+/* NAV && SEARCH BAR */
+
+h1 {
+  color: #fff;
+  font-size: 30px;
+  grid-area: logo;
+  margin: auto;
+}
+
+#logo {
+  margin: 0 10px;
+  text-align: top;
+  width: 50px;
+}
+
+.header-image {
+  position: relative;
+  top: 3px;
+}
+
+.input-search-container {
+  margin: auto;
+}
+
+.input-search {
+  border: 2px solid #C2B2B4;
+  font-size: 24px;
+}
+
+.input-search-btn {
+  background-color: #C2B2B4;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  height: 40px;
+  position: relative;
+  bottom: 4px;
+}
+
+/* MAIN && BUTTON */
+
+.main-input {
+  display: grid;
+  grid-template-areas: 
+  "titleInput titleInput"
+  "title title"
+  "captionInput captionInput"
+  "caption caption"
+  "btn btn"
+  "fave album";
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: 6% .2fr 8% .2fr .3fr .3fr;
+  height: 400px;
+  margin: auto;
+  width: 500px;
+}
+
+.input-search-container {
+  grid-area: input;
+}
+
+.input-title {
+  grid-area: title;
+}
+
+.input-caption {
+  grid-area: caption;
+}
+
+#title-photo-label {
+  grid-area: titleInput;
+}
+
+#caption-photo-label {
+  grid-area: captionInput;
+}
+
+.input-caption,
+.input-title {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.input-label {
+  color: #938284;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+/* BUTTON */
+
+button {
+  background-color: #5B4447;
+  border: none;
+  color:#fff;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #938284;
+}
+
+.btn-file {
+  grid-area: btn;
+  margin: 20px 0;
+}
+
+.btn-fave {
+  grid-area: fave;
+  margin-right: 25px;
+  height: 65%;
+}
+
+.btn-album {
+  grid-area: album;
+  margin-left: 25px;
+  height: 65%;
+}
 
 
 
 
+/* PHOTO SECTION */
 
+.photo-section {
+  background-color: #C2B2B4;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.photo-card {
+  border: 1px solid #938284;
+  height: 400px;
+  position: relative;
+  width: 300px;
+}
+
+.card-photo-title,
+.card-photo-caption {
+  color: #3E2A35;
+  font-size: 14px;
+}
+
+.card-footer {
+  background-color: #5B4447;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.card-btn {
+  width: 50px;
+}
 
 
 

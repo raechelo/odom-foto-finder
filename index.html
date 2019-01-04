@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <link rel="stylesheet" type="text/css" href="normalize.css">
+      <meta charset="UTF-8">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>FABULOUS FOTO FINDER</title>
+    </head>
+  <body>
+    <nav>
+      <h1>FOTO<span class="header-image"><img src="images/foto-finder-logo.svg" id="logo"></span>FINDER</h1>
+      <article class="input-search-container">
+        <input type="search" name="search" class="input-search" id="nav-search-js" placeholder="Search"><button class="input-search-btn"><i class="fas fa-search"></i></button>
+      </article>
+    </nav>
+  <main>
+    <section class="main-input">
+      <label for="title-photo" class="input-label" id="title-photo-label">Title</label>
+       <input type="text" name="photo-title" class="input-title" id="title-photo-js">
+       <label for="caption-photo" class="input-label" id="caption-photo-label">Caption</label>
+       <input type="text" name="caption" class="input-caption" id="caption-photo-js">
+       <button class="btn btn-file" id="file">Choose File</button>
+       <button class="btn btn-fave" id="fave">View Favorites</button>
+       <button class="btn btn-album" id="album">Add to Album</button>
+    </section>
+  </main>
+    <section class="photo-section">
+      <article class="photo-card">
+        <h3 class="card-photo-title">title</h3>
+        <h4 class="card-photo-caption">caption</h4>
+        <section class="card-photo-holder">
+        </section>
+        <section class="card-footer">
+          <img src="images/delete.svg" class="card-btn" alt="delete photo">
+          <img src="images/favorite.svg" class="card-btn" alt="favorite photo">
+        </section>
+      </article>
+    </section>
+  </body>
+</html>
