@@ -1,10 +1,10 @@
 <!DOCTYPE html>
   <html lang="en">
     <head>
-      <link rel="stylesheet" type="text/css" href="styles.css">
-      <link rel="stylesheet" type="text/css" href="normalize.css">
       <meta charset="UTF-8">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="normalize.css">
+      <link rel="stylesheet" type="text/css" href="styles.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>FABULOUS FOTO FINDER</title>
@@ -22,22 +22,25 @@
        <input type="text" name="photo-title" class="input-title" id="title-photo-js">
        <label for="caption-photo" class="input-label" id="caption-photo-label">Caption</label>
        <input type="text" name="caption" class="input-caption" id="caption-photo-js">
-       <button class="btn btn-file" id="file">Choose File</button>
+       <label for="file-input" class="btn-file"><p>Choose File</p></label>
+       <input type="file" class="upload-file" id="file-input">
        <button class="btn btn-fave" id="fave">View Favorites</button>
        <button class="btn btn-album" id="album">Add to Album</button>
     </section>
   </main>
     <section class="photo-section">
-      <article class="photo-card">
-        <h3 class="card-photo-title">title</h3>
-        <h4 class="card-photo-caption">caption</h4>
-        <section class="card-photo-holder">
+      <!-- <article class="photo-card">
+        <h3 class="card-photo-title">Marvelous Marvel</h3>
+        <section class="card-photo-holder"><img src="images/spidergwen.jpeg" alt="spidergwen" class="gallery-img">
+        <h4 class="card-photo-caption">Marvels mighty mutants go worldwide and beyond in this series following Cyclops, Wolverine, Beast</h4>
         </section>
         <section class="card-footer">
           <img src="images/delete.svg" class="card-btn" alt="delete photo">
           <img src="images/favorite.svg" class="card-btn" alt="favorite photo">
         </section>
-      </article>
+      </article> -->
     </section>
   </body>
+  <script type="text/javascript" src="photo.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </html>
