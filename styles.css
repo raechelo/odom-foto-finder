@@ -150,6 +150,10 @@ button:hover {
   height: 65%;
 }
 
+.btn-album:disabled {
+  background-color: #cdc6c7;
+}
+
 .btn-clear {
   bottom: 0;
   height: 40px;
