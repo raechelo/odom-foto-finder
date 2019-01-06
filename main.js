@@ -54,7 +54,7 @@ function createElement() {
 
 function addPhoto(e) {
   id = Date.now();
-  var newPhoto = new Photo(title.value, caption.value, Date.now(), e.target.result);
+  var newPhoto = new Photo(title.value, caption.value, Date.now(), e.target.result, favorite);
     photoGallery.innerHTML += `<article data-id="${id}" class="photo-card">
         <h3 class="card-photo-title" contenteditable="true">${title.value}</h3>
         <section class="card-photo-holder"><img src=${e.target.result} alt="user-photo" class="gallery-img">
@@ -78,10 +78,12 @@ function updatePhoto() {
   })
 }
 
-function deletePhoto() {
-    event.target.parentElement.parentElement.dataset.id;
+function deletePhoto(id) {
+    // var oldPhoto = new Photo(id)
+    var oldPhoto = imagesArr.find(photo => imagesArr.id === event.target.parentElement.parentElement.dataset.id);
     event.target.parentElement.parentElement.remove();
-    // localStorage.removeItem(event.target)
+    console.log(oldPhoto)
+    Photo.deleteFromStorage(oldPhoto);
 }
 
 function favoritePhoto() {
@@ -89,6 +91,7 @@ function favoritePhoto() {
     event.target.src = 'images/favorite.svg';
   } else {
     event.target.src = 'images/favorite-active.svg'
+    // this.favorite = true;
   }
   // imagesArr.saveToStorage(e)
   // document.getElementById('faveImg').src = 'images/favorite-active.svg';
