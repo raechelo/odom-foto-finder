@@ -15,6 +15,7 @@ nav {
 main {
   background-color: #3E2A35;
   height: 400px;
+  position: relative;
   width: 100%;
 }
 
@@ -147,6 +148,15 @@ button:hover {
   grid-area: album;
   margin-left: 25px;
   height: 65%;
+}
+
+.btn-clear {
+  bottom: 0;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  width: 150px;
+  z-index: 1;
 }
 
 /* PHOTO SECTION */
