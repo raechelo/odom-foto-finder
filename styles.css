@@ -49,11 +49,11 @@ h1 {
 
 .input-search-btn {
   background-color: #C2B2B4;
-  border: none;
   border-radius: 0 5px 5px 0;
+  border: none;
+  bottom: 3px;
   height: 34px;
   position: relative;
-  bottom: 3px;
 }
 
 /* MAIN // INPUTS */
