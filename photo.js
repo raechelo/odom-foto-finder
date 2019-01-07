@@ -4,25 +4,23 @@ class Photo {
     this.caption = caption;
     this.id = id;
     this.file = file;
-    this.favorite = false;
+    this.favorite = favorite || false;
   }
   saveToStorage(imagesArr) {
-      
     localStorage.setItem('photos', JSON.stringify(imagesArr));
   }
 
   static deleteFromStorage(id) {
-    console.log(id)
-    // imagesArr.forEach(function(pic) {
-      if (true) {
-        console.log('green')
-        imagesArr.splice(id, 1);
-        console.log(imagesArr)
-        // localStorage.removeItem(id);
-        localStorage.setItem('photos', JSON.stringify(imagesArr));
+    imagesArr.splice(id, 1);
+    localStorage.setItem('photos', JSON.stringify(imagesArr));
+  }
+    
+  static updatePhoto(id, type, newContent) {
+    imagesArr.forEach(function(photo) {
+      if (photo.id === id){
+      photo[type] = newContent;
       }
-    }
-  // }
-  // updatePhoto() {
-  // }
+     localStorage.setItem('photos', JSON.stringify(imagesArr));     
+  })
+}
 }
