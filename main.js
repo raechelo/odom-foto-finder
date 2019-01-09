@@ -28,7 +28,7 @@ create.addEventListener('click', createElement);
 
 clearStorage.addEventListener('dblclick', clearGallery);
 
-photoGallery.addEventListener('dblclick', updateCard);
+photoGallery.addEventListener('dblclick', keyCheck);
 
 searchBar.addEventListener('input', searchPhotos);
 
@@ -78,21 +78,21 @@ function addPhoto(photo) {
       </article>`
 }
 
+function keyCheck (e) {
+    document.body.addEventListener('keypress', function (e) {
+    if (e.keyCode === 13) updateCard(e);
+  })
+}
+
 function updateCard(event) {
     var photoId = parseInt(event.target.parentElement.dataset.id);
     var photoCapId = parseInt(event.target.parentElement.parentElement.dataset.id);
-    document.body.addEventListener('keypress', function (e) {
-    var key = e.keyCode;
-    if (key === 13) {
     if (event.target.className === 'card-photo-title') {
       Photo.updatePhoto(photoId, 'title', event.target.innerText);
     } else if (event.target.className === 'card-photo-caption') {
       Photo.updatePhoto(photoCapId, 'caption', event.target.innerText);
     }
       event.target.contentEditable = false;
-      event.target.blur();
-    }
-  })
 }
 
 function deletePhoto(id) {
@@ -134,8 +134,8 @@ function hideHeader() {
 
 function searchPhotos() {
   var localStoragePhotos = JSON.parse(localStorage.getItem('photos'));
-  photoGallery.innerHTML = "";
   var findPhoto = searchBar.value;
+  photoGallery.innerHTML = "";
   if (findPhoto[0]) {
   var filteredPhotos = localStoragePhotos.filter(photo => photo.title.includes(findPhoto) || photo.caption.includes(findPhoto))
     appendPhotos(filteredPhotos);
@@ -158,6 +158,3 @@ function faveOrDelete(e) {
     deletePhoto(cardId);
   }
 }
-
-
-
