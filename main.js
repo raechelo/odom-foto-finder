@@ -134,8 +134,8 @@ function hideHeader() {
 
 function searchPhotos() {
   var localStoragePhotos = JSON.parse(localStorage.getItem('photos'));
-  photoGallery.innerHTML = "";
   var findPhoto = searchBar.value;
+  photoGallery.innerHTML = "";
   if (findPhoto[0]) {
   var filteredPhotos = localStoragePhotos.filter(photo => photo.title.includes(findPhoto) || photo.caption.includes(findPhoto))
     appendPhotos(filteredPhotos);
@@ -158,6 +158,3 @@ function faveOrDelete(e) {
     deletePhoto(cardId);
   }
 }
-
-
-

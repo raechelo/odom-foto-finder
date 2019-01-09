@@ -21,6 +21,6 @@ class Photo {
       photo[type] = newContent;
       }
      localStorage.setItem('photos', JSON.stringify(imagesArr));     
-  })
-}
+    })
+  }
 }
