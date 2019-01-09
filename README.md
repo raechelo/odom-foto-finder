@@ -17,7 +17,7 @@ Blank with alert to add photos
 
 [![screencapture-file-Users-raechelodom-Desktop-mod1-odom-foto-find.png](https://i.postimg.cc/4N5NmqFj/screencapture-file-Users-raechelodom-Desktop-mod1-odom-foto-find.png)](https://postimg.cc/6y8NPjKh)
 
-Hover States Enabled
+Hover states enabled on clear gallery and view favorites buttons
 
 [![screencapture-file-Users-raechelodom-Desktop-mod1-odom-foto-find.png](https://i.postimg.cc/25BDFK2k/screencapture-file-Users-raechelodom-Desktop-mod1-odom-foto-find.png)](https://postimg.cc/KKFwmQ6w)
 
