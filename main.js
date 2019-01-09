@@ -114,7 +114,7 @@ function favoritePhoto(event) {
 }
 
 function clearGallery(imgesArr) {
-  alert("Are you sure you want to clear ALL images?")
+  confirm("Are you sure you want to clear ALL images?")
   localStorage.clear(imagesArr);
   location.reload();
 }

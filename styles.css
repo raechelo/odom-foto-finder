@@ -16,6 +16,7 @@ nav {
   grid-template-areas: "logo . input";
   grid-template-columns: repeat(3, 1fr);
   height: 80px;
+  padding: 10px;
 }
 
 main {
@@ -29,7 +30,8 @@ main {
 
 h1 {
   color: #fff;
-  font-size: 30px;
+  font-size: 36px;
+  letter-spacing: 4px;
   grid-area: logo;
   margin: 15px auto;
 }
@@ -46,12 +48,14 @@ h1 {
 
 .input-search-container {
   margin: 15px auto;
+  grid-area: input;
 }
 
 .input-search {
   border: 2px solid #C2B2B4;
   font-size: 24px;
   height: 43px;
+  padding: 5px;
   width: 237px;
 }
 
@@ -62,7 +66,7 @@ h1 {
   bottom: 4px;
   height: 43px;
   position: relative;
-  width: 25px;
+  width: 40px;
 }
 
 /* MAIN // INPUTS */
@@ -83,10 +87,6 @@ h1 {
   height: 400px;
   margin: auto;
   width: 600px;
-}
-
-.input-search-container {
-  grid-area: input;
 }
 
 .input-title {
@@ -148,7 +148,10 @@ button:hover {
   grid-area: btn;
   margin: 20px 0;
   text-align: center;
-  vertical-align: center;
+}
+
+.btn-file p {
+  margin-top: 2.5%;
 }
 
 .btn-fave {
@@ -240,14 +243,31 @@ h2 {
 
 /*MEDIA QUERIES*/
 
+@media screen and (max-width: 1024px) {
+  
+  h1 {
+    font-size: 34px;
+  }
+}
+
 @media screen and (max-width: 950px) {
+
   nav {
     grid-template-areas: "logo input";
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 639px) {
+
+  .main-input {
+    width: 400px;
+  }
+
+  h1 {
+    letter-spacing: 8px
+  }
+
   nav {
     display: block;
     grid-gap: 20px 10px;
@@ -255,31 +275,17 @@ h2 {
     padding: 10px;
     text-align: center;
   }
-}
 
-@media screen and (max-width: 420px) {
-  
-}
-
-@media screen and (max-width: 320px) {
-  .main-input {
-    width: 320px;
-  }
-
-  h1 {
-    margin: 0;
-  }
-
-  .upload-file {
-    display: block;
+  .photo-section {
+    grid-template-columns: repeat(auto-fit, 360px);
   }
 
   .input-search {
-    width: 270px;
+    width: 360px;
   }
 
   .input-search-btn {
-    height: 43px;
+    bottom: 3px;
   }
 
   .btn-album {
@@ -288,6 +294,63 @@ h2 {
 
   .btn-fave {
     margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  
+  h1 {
+    letter-spacing: 4px;
+  }
+
+  .input-search {
+      width: 320px;
+    }
+
+  .main-input {
+    width: 360px;
+  }
+}
+
+@media screen and (max-width: 379px) {
+   
+   h1 {
+    letter-spacing: 2px;
+   }
+
+   .main-input {
+    width: 335px;
+   }
+
+   .input-search {
+    width: 295px;
+   }
+
+   .photo-section {
+    grid-template-columns: repeat(auto-fit, 335px);
+  } 
+}
+
+@media screen and (max-width: 320px) {
+  
+  h1 {
+    font-size: 32px;
+  }
+
+  .input-search {
+    width: 255px;
+  }
+
+  .input-search-btn {
+    bottom: 3px;
+  }
+
+  .main-input {
+    width: 295px;
+   }
+
+  .photo-section {
+    grid-template-columns: repeat(auto-fit, 295px);
   }
 }
 
