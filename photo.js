@@ -10,9 +10,9 @@ class Photo {
     localStorage.setItem('photos', JSON.stringify(imagesArr));
   }
 
-  static deleteFromStorage(id) {
-    imagesArr.splice(id, 1);
-    localStorage.setItem('photos', JSON.stringify(imagesArr));
+  deleteFromStorage(idx, array) {
+    array.splice(idx, 1);
+    this.saveToStorage(array);
   }
     
   static updatePhoto(id, type, newContent) {
