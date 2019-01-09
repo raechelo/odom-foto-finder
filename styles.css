@@ -1,5 +1,11 @@
 * {
   font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #C2B2B4;
 }
 
 /* PAGE SECTIONS */
@@ -25,7 +31,7 @@ h1 {
   color: #fff;
   font-size: 30px;
   grid-area: logo;
-  margin: auto;
+  margin: 15px auto;
 }
 
 #logo {
@@ -39,26 +45,30 @@ h1 {
 }
 
 .input-search-container {
-  margin: auto;
+  margin: 15px auto;
 }
 
 .input-search {
   border: 2px solid #C2B2B4;
   font-size: 24px;
+  height: 43px;
+  width: 237px;
 }
 
 .input-search-btn {
   background-color: #C2B2B4;
   border-radius: 0 5px 5px 0;
   border: none;
-  bottom: 3px;
-  height: 34px;
+  bottom: 4px;
+  height: 43px;
   position: relative;
+  width: 25px;
 }
 
 /* MAIN // INPUTS */
 
 .main-input {
+  background-color: #3E2A35;
   display: grid;
   grid-template-areas: 
   "titleInput titleInput"
@@ -66,12 +76,13 @@ h1 {
   "captionInput captionInput"
   "caption caption"
   "btn btn"
-  "fave album";
+  "fave album"
+  "clear clear";
   grid-template-columns: repeat(2, 2fr);
-  grid-template-rows: 6% .2fr 6% .2fr .25fr .25fr;
+  grid-template-rows: 6% .2fr 6% .2fr .5fr .5fr .5fr;
   height: 400px;
   margin: auto;
-  width: 500px;
+  width: 600px;
 }
 
 .input-search-container {
@@ -97,6 +108,7 @@ h1 {
 .input-caption,
 .input-title {
   font-size: 22px;
+  height: 42px;
   margin: 5px 0;
 }
 
@@ -123,6 +135,7 @@ button {
   border: none;
   color:#fff;
   font-size: 16px;
+  height: 50px;
   cursor: pointer;
 }
 
@@ -141,13 +154,11 @@ button:hover {
 .btn-fave {
   grid-area: fave;
   margin-right: 25px;
-  height: 65%;
 }
 
 .btn-album {
   grid-area: album;
   margin-left: 25px;
-  height: 65%;
 }
 
 .btn-album:disabled {
@@ -155,21 +166,24 @@ button:hover {
 }
 
 .btn-clear {
-  bottom: 0;
-  height: 40px;
-  position: absolute;
-  right: 0;
-  width: 150px;
-  z-index: 1;
+  background-color: indianred;
+  grid-area: clear;
+}
+
+.btn-clear:hover {
+  background-color: red;
 }
 
 /* PHOTO SECTION */
 
 .photo-section {
   background-color: #C2B2B4;
-  display: flex;
-  height: 100vh;
-  justify-content: flex-start;
+  display: grid;
+  grid-gap: 20px 20px;
+  grid-template-columns: repeat(auto-fit, 290px);
+  grid-template-rows: auto;
+  justify-content: center;
+  padding: 0px 45px;
   padding: 20px;
 }
 
@@ -178,7 +192,7 @@ button:hover {
   border: 1px solid #938284;
   height: 400px;
   position: relative;
-  width: 300px;
+  min-width: 280px;
 }
 
 .photo-card:hover {
@@ -218,8 +232,64 @@ button:hover {
   width: 50px;
 }
 
+h2 {
+  color: #3E2A35;
+  font-weight: 800;
+  text-align: center;
+}
 
+/*MEDIA QUERIES*/
 
+@media screen and (max-width: 950px) {
+  nav {
+    grid-template-areas: "logo input";
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    display: block;
+    grid-gap: 20px 10px;
+    height: 115px;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  
+}
+
+@media screen and (max-width: 320px) {
+  .main-input {
+    width: 320px;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  .upload-file {
+    display: block;
+  }
+
+  .input-search {
+    width: 270px;
+  }
+
+  .input-search-btn {
+    height: 43px;
+  }
+
+  .btn-album {
+    margin-left: 10px;
+  }
+
+  .btn-fave {
+    margin-right: 10px;
+  }
+}
 
 /*COLOR SCHEME
 
