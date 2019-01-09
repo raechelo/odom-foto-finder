@@ -5,6 +5,7 @@ was a comp given to challenge and solidify our use of semantic HTML, clean, orga
 [![fotofinder2-1.png](https://i.postimg.cc/mD1FMpys/fotofinder2-1.png)](https://postimg.cc/r0cm2JHn)
 
 Mobile Version
+
 [![fotofinder2-mobile.png](https://i.postimg.cc/P5fpK5QK/fotofinder2-mobile.png)](https://postimg.cc/WhK11jKJ)
 
 # MY RECREATION
