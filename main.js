@@ -21,24 +21,26 @@ var reader = new FileReader();
 //// EVENT LISTENERS ////
 
 window.addEventListener('load', appendPhotos(imagesArr));
-
+// $(window).click(appendPhotos(imagesArr));
 input.addEventListener('change', enableBtn);
-
+// $("#file-input").change(enableBtn);
 create.addEventListener('click', createElement);
-
+// $("#create").click(createElement);
 clearStorage.addEventListener('dblclick', clearGallery);
-
+// $("#clearStorage").dblclick(clearGallery);
 photoGallery.addEventListener('dblclick', keyCheck);
-
+// $("#photoGallery").on("click", keyCheck, faveOrDelete);
 searchBar.addEventListener('input', searchPhotos);
-
+// $("#searchBar").keyup(searchPhotos);
 photoGallery.addEventListener('click', faveOrDelete);
+
 
 //// FUNCTIONS ////
 
 function appendPhotos(array) {
+  $("#album").prop("disabled", true)
   imagesArr = [];
-  array.forEach(function (photo) {
+  array.forEach(photo => {
     var newPhoto = new Photo (photo.title, photo.caption, photo.id, photo.file, photo.favorite)
     imagesArr.push(newPhoto);
   })
@@ -66,50 +68,50 @@ function firstPhoto(e) {
 }
 
 function addPhoto(photo) {
-    photoGallery.innerHTML += `<article data-id="${photo.id}" class="photo-card">
-        <h3 class="card-photo-title" contentEditable="true">${photo.title}</h3>
-        <section class="card-photo-holder"><img src=${photo.file} alt="user-photo" class="gallery-img">
-        <h4 class="card-photo-caption" id="card-photo-cap-js" contentEditable="true">${photo.caption}</h4>
-        </section>
-        <section class="card-footer">
-          <img src="images/delete.svg" class="card-btn deleted" id="dlt" alt="delete photo">
-          <img src=${photo.favorite ? "images/favorite-active.svg" : "images/favorite.svg"} class="card-btn fave" id="faveImg" alt="favorite photo">
-        </section>
-      </article>`
+  photoGallery.innerHTML += `<article data-id="${photo.id}" class="photo-card">
+      <h3 class="card-photo-title" contentEditable="true">${photo.title}</h3>
+      <section class="card-photo-holder"><img src=${photo.file} alt="user-photo" class="gallery-img">
+      <h4 class="card-photo-caption" id="card-photo-cap-js" contentEditable="true">${photo.caption}</h4>
+      </section>
+      <section class="card-footer">
+        <img src="images/delete.svg" class="card-btn deleted" id="dlt" alt="delete photo">
+        <img src=${photo.favorite ? "images/favorite-active.svg" : "images/favorite.svg"} class="card-btn fave" id="faveImg" alt="favorite photo">
+      </section>
+    </article>`
 }
 
 function keyCheck (e) {
-    document.body.addEventListener('keypress', function (e) {
-    if (e.keyCode === 13) updateCard(e);
+  document.body.addEventListener('keypress', function (e) {
+  if (e.keyCode === 13) updateCard(e);
   })
 }
 
 function updateCard(event) {
-    var photoId = parseInt(event.target.parentElement.dataset.id);
-    var photoCapId = parseInt(event.target.parentElement.parentElement.dataset.id);
-    if (event.target.className === 'card-photo-title') {
-      Photo.updatePhoto(photoId, 'title', event.target.innerText);
-    } else if (event.target.className === 'card-photo-caption') {
-      Photo.updatePhoto(photoCapId, 'caption', event.target.innerText);
-    }
-      event.target.contentEditable = false;
+  var photoId = parseInt(event.target.parentElement.dataset.id);
+  var photoCapId = parseInt(event.target.parentElement.parentElement.dataset.id);
+  if (event.target.className === 'card-photo-title') {
+    Photo.updatePhoto(photoId, 'title', event.target.innerText);
+  } else if (event.target.className === 'card-photo-caption') {
+    Photo.updatePhoto(photoCapId, 'caption', event.target.innerText);
+  }
+    event.target.contentEditable = false;
 }
 
 function deletePhoto(id) {
-    var index = imagesArr.findIndex(photo => photo.id === id)
-    event.target.parentElement.parentElement.remove();
-    imagesArr[index].deleteFromStorage(index, imagesArr);
-    hideHeader();
+  var index = imagesArr.findIndex(photo => photo.id === id)
+  event.target.parentElement.parentElement.remove();
+  imagesArr[index].deleteFromStorage(index, imagesArr);
+  hideHeader();
 }
 
 function favoritePhoto(event) {
   var photoId = parseInt(event.target.parentElement.parentElement.dataset.id);
   if (event.target.attributes.src.textContent === 'images/favorite.svg') {
     event.target.attributes.src.textContent = 'images/favorite-active.svg';
-    Photo.updatePhoto(photoId, 'favorite', true)
+    Photo.updatePhoto(photoId, 'favorite', true);
   } else {
     event.target.src = 'images/favorite.svg';
-    Photo.updatePhoto(photoId, 'favorite', false)
+    Photo.updatePhoto(photoId, 'favorite', false);
   }
 }
 
@@ -120,9 +122,8 @@ function clearGallery(imgesArr) {
 }
 
 function enableBtn() {
-  var albumBtn = document.getElementById('album'); 
-   if (fileUpload.files.length >= 1) {
-    album.disabled = false;
+  if (fileUpload.files.length >= 1) {
+    $("#album").prop("disabled", false)
   }
 }
 
